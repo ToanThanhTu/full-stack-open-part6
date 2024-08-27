@@ -28,6 +28,16 @@ export const useNotificationValue = () => {
 export const useNotificationDispatch = () => {
     const notificationAndDispatch = useContext(NotificationContext)    
     return notificationAndDispatch[1]
+
+    // another solution:
+    // const dispatch = notificationAndDispatch[1]
+
+    // return (type, payload) => {
+    //     dispatch({ type, payload })
+    //     setTimeout(() => {
+    //         dispatch({ type: 'CLEAR', payload: null })
+    //     }, 5000)
+    // }
 }
 
 export const NotificationContextProvider = (props) => {
